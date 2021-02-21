@@ -1,5 +1,4 @@
 const express = require('express');
-const router = express.Router();
 const app = express();
 const session = require('express-session')
 const flash = require('connect-flash')
@@ -9,9 +8,14 @@ const expressEjsLayout = require('express-ejs-layouts');
 const passport = require('passport');
 require("./config/passport")(passport);
 
+
 //mongoose
-mongoose.connect('mongodb://localhost/test',{useNewUrlParser: true, useUnifiedTopology : true})
-.then(() => console.log('connected,,'))
+const dbUri = 'mongodb+srv://Admin:Un9YPxPfMvRHKdS@cluster0.fzits.mongodb.net/Forums?retryWrites=true&w=majority'
+mongoose.connect(dbUri,{useNewUrlParser: true, useUnifiedTopology : true})
+.then(() => {
+   app.listen(port),
+   console.log("listening on port" + port)
+})
 .catch((err)=> console.log(err));
 //EJS
 app.set('view engine','ejs');
@@ -36,6 +40,5 @@ app.use((req,res,next)=> {
 //Routes
 app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
+app.use('/post',require('./routes/post'));
 
-app.listen(port); 
-console.log("listening on port " + port);

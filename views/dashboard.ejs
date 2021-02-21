@@ -5,6 +5,23 @@
     <body>
         <h1>DashBoard</h1>
         <p> Welcome <%= user.name %></p>
+        <a href="/users/logout" method="get">logout</a>
+    
+        <div class="forumView">
+            <h2>All Posts</h2>
+
+            <% if (posts.length > 0)  {%>
+            <% posts.forEach(post => { %>
+
+                <h3 class="title"> <%= post.title %></h3>
+                <p class="body"> <%= post.body %> </p>
+
+            <% }) %>
+            <% } else { %>
+                <p>There are no posts to display...</p>  
+                <% } %>  
+        </div>
+
     </body>
-    <a href="/users/logout" method="GET">logout</a>
+    
 </html>
