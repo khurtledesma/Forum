@@ -1,0 +1,18 @@
+<%- include('./partials/navbar') -%>
+
+<div class="mainForum container">
+    <h2 class="text-center">All Posts</h2>
+            <div class="forumPost">
+                <h3 class="forumPostTitle">
+                    <%= posts.title %>
+                </h3>
+                <div class="forumPostSub"> Posted by: <%= posts.submittedBy %>
+                </div>
+                <div class="forumPostBody">
+                    <%= posts.body %>
+                </div>
+                
+                
+            </div>
+
+</div>
