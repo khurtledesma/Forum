@@ -6,7 +6,7 @@
             <% posts.forEach(post=> { %>
                 <div class="forumPost">
                     <h3 class="forumPostTitle">
-                        <a href="/post/"<%= post.title %>>
+                        <a href="/post/<%= post.id %>"> <%= post.title %> </a>
                     </h3>
                     <div class="forumPostSub"> Posted by: <%= post.submittedBy %>
                     </div>
