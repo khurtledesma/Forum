@@ -1,24 +1,20 @@
-<h1> Login </h1>
-<%- include ('./partials/messages') %>
+<div class="login container">
+  <h1 class="text-center"> Login </h1>
+  <div class="container text-center">
+    <%- include ('./partials/messages') %>
+  </div>
+  <form action="/users/login" method="POST" class="container">
 
-<form action="/users/login" method="POST">
-<div>
-<label for="email">Email</label>
-    <input
-    type="email"
-    name="email"
-    placeholder="Enter Email"
-    />
+    <div class="form-group">
+      <label for="email" hidden>Email</label>
+      <input type="email" name="email" placeholder="Email" class="form-control" />
     </div>
-<div>
-    <label for="password">Password</label>
-    <input
-      type="password"
-      name="password"
-      placeholder="Enter Password"
-    />
-  
+    <div class="form-group">
+      <label for="password" hidden>Password</label>
+      <input type="password" name="password" placeholder="Password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Login</button>
+    <a href="/register" class="text-center">Don't have an account? Register here.</a>
+
+  </form>
 </div>
-<button type="submit" class="btn btn-primary btn-block">Login</button>
-   
-</form>
