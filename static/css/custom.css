@@ -1,0 +1,21 @@
+
+.login {
+    margin-top: 10%;
+    padding: 30px;
+}
+
+.loginForm {
+    border: 2px black solid;
+    border-radius: 25px;
+}
+
+.mainForum {
+    border: 2px black solid;
+    margin-top: 30px;
+}
+
+.forumPost {
+    border: 2px black solid;
+    padding: 10px;
+    margin: 15px;
+}
