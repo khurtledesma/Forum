@@ -6,7 +6,9 @@ const mongoose = require('mongoose');
 const port = 3000;
 const expressEjsLayout = require('express-ejs-layouts');
 const passport = require('passport');
+const path = require('path');
 require("./config/passport")(passport);
+
 
 
 //mongoose
@@ -17,6 +19,9 @@ mongoose.connect(dbUri,{useNewUrlParser: true, useUnifiedTopology : true})
    console.log("listening on port" + port)
 })
 .catch((err)=> console.log(err));
+
+//static files
+app.use(express.static(path.join(__dirname, "/static")));
 //EJS
 app.set('view engine','ejs');
 app.use(expressEjsLayout);
@@ -40,5 +45,5 @@ app.use((req,res,next)=> {
 //Routes
 app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
-app.use('/post',require('./routes/post'));
+app.use('/post',require('./routes/posts'));
 
