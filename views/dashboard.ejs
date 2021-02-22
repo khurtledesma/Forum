@@ -1,27 +1,26 @@
-<html>
-    <head>
-    <title>Dashboard</title>
-    </head>
-    <body>
-        <h1>DashBoard</h1>
-        <p> Welcome <%= user.name %></p>
-        <a href="/users/logout" method="get">logout</a>
-    
-        <div class="forumView">
-            <h2>All Posts</h2>
+<%- include('./partials/navbar') -%>
+    <div class="mainForum container">
+        <h2 class="text-center">All Posts</h2>
 
-            <% if (posts.length > 0)  {%>
-            <% posts.forEach(post => { %>
+        <% if (posts.length> 0) {%>
+            <% posts.forEach(post=> { %>
+                <div class="forumPost">
+                    <h3 class="forumPostTitle">
+                        <a href="/post/"<%= post.title %>>
+                    </h3>
+                    <div class="forumPostSub"> Posted by: <%= post.submittedBy %>
+                    </div>
+                    <div class="forumPostBody">
+                        <%= post.body %>
+                    </div>
+                    
+                    
+                </div>
+                <% }) %>
+                    <% } else { %>
+                        <p>There are no posts to display...</p>
+                        <% } %>
 
-                <h3 class="title"> <%= post.title %></h3>
-                <p class="body"> <%= post.body %> </p>
+    </div>
 
-            <% }) %>
-            <% } else { %>
-                <p>There are no posts to display...</p>  
-                <% } %>  
-        </div>
-
-    </body>
-    
-</html>
+    <%- include('./partials/footer') -%>
