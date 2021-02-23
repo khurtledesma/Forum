@@ -5,9 +5,10 @@ const Post = require('../models/post');
 
 router.get('/', ensureAuthenticated, (req, res) => {
     Post.find({category: 'other'})
-    .populate({ path: 'submittedBy', select: 'name' })
+    .lean()
+    .populate('submittedBy')
     .then((result) => {
-      console.log()
+      result.forEach(i => i.submittedBy = i.submittedBy.name)
       res.render('other', {
         posts: result,
         user: req.user,

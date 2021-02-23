@@ -6,13 +6,24 @@
                 <h3 class="forumPostTitle">
                     <%= posts.title %>
                 </h3>
-                <div class="forumPostSub"> Posted by: <%= posts.submittedBy %>
+                <div class="forumPostSub"> Posted by: <%= posts.submittedBy.name %>
                 </div>
                 <div class="forumPostBody">
                     <%= posts.body %>
                 </div>
                 
-                
+            </div>
+            <div class="comments">
+            This is where comments would go.
+            
+            </div>
+
+            <div class="addNewComment">
+                <form class="form-group" method="POST" action="/post/<%= posts.id %>/comments">
+                    Leave a comment here!
+                    <textarea name="commentBody" class="form-control"></textarea>
+                    <button type="submit" class="btn btn-primary btn-block">Comment</button>
+                </form>
             </div>
 
 </div>
