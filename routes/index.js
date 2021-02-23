@@ -14,7 +14,6 @@ router.get('/register', (req, res) => {
 
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
   Post.find()
-    .populate({ path: 'submittedBy', select: 'name' })
     .then((result) => {
       console.log()
       res.render('dashboard', {
