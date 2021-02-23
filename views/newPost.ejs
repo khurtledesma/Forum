@@ -2,6 +2,19 @@
 <form action="/post/new-post" method="POST">
     <label for="title">Post Title:</label>
     <input type="text" id="title" name="title">
+    <label for ="category">Category</label>
+    <select name="category" id="category">
+        <option value="cats">Cats</option>
+        <option value="dogs">Dogs</option>
+        <option value="other">Other</option>
+      </select>
+    <label for="subcategory">Sub Category</label>
+    <select name="subcategory" id="subcategory">
+        <option value="general">General</option>
+        <option value="health">Health</option>
+        <option value="other">Other</option>
+      </select>
+    <input type="text" id="title" name="title">
     <label for="body"> Body:</label>
     <textarea id="body" name="body" required></textarea>
     <button type="submit">Submit</button>
