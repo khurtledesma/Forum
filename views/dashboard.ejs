@@ -1,26 +1,10 @@
 <%- include('./partials/navbar') -%>
     <div class="mainForum container">
-        <h2 class="text-center">All Posts</h2>
-
-        <% if (posts.length> 0) {%>
-            <% posts.forEach(post=> { %>
-                <div class="forumPost">
-                    <h3 class="forumPostTitle">
-                        <a href="/post/<%= post.id %>"> <%= post.title %> </a>
-                    </h3>
-                    <div class="forumPostSub"> Posted by: <%= post.submittedBy %>
-                    </div>
-                    <div class="forumPostBody">
-                        <%= post.body %>
-                    </div>
-                    
-                    
-                </div>
-                <% }) %>
-                    <% } else { %>
-                        <p>There are no posts to display...</p>
-                        <% } %>
-
+        <h2 class="text-center">Categories</h2>
+        <a href="/cats">Cats</a>
+        <a href="/dogs">Dogs</a>
+        <a href="/other">Other</a>
+        
     </div>
 
-    <%- include('./partials/footer') -%>
+<%- include('./partials/footer') -%>
