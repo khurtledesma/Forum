@@ -1,6 +1,6 @@
 <%- include('./partials/navbar') -%>
 
-    <div class="mainForum container">
+    <div class="mainForum customContainer">
         <div class="forumPost">
             <h2 class="forumPostTitle">
                 <%= posts.title %>
@@ -15,34 +15,35 @@
 
         </div>
 
-        <div class="comments">
-
+        <div class="commentSection">
+            <div class="comments">
                 <% if ( posts.comments.length> 0) {%>
                     <% posts.comments.forEach(post=> { %>
                         <div class="commentReply">
-                        <div class="commentReplyTitle">
-                            <%= post.submittedBy.name %> on <%= post.date %>
-                        </div>
-                        <div class="commentReplyBody">
-                            Body: <%= post.body %>
-                        </div>
-                        <hr>
+                            <div class="commentReplyTitle">
+                                <%= post.submittedBy.name %> on <%= post.date %>
+                            </div>
+                            <div class="commentReplyBody">
+                                <%= post.body %>
+                            </div>
+                            <hr>
 
-                        <% }) %>
-                            <% } else { %>
-                                <p>There are no replies to this post.</p>
-                                <% } %>
+                            <% }) %>
+                                <% } else { %>
+                                    <p>There are no replies to this post. Leave one below!</p>
+                                    <% } %>
 
+                        </div>
             </div>
-        </div>
 
 
 
             <div class="addNewComment">
                 <form class="form-group text-center" method="POST" action="/post/<%= posts._id %>/comments">
-                    <textarea name="commentBody" class="form-control"  placeholder="Leave a comment here!"></textarea>
+                    <textarea name="commentBody" class="form-control" placeholder="Leave a comment here!"></textarea>
                     <button type="submit" class="btn btn-primary btn-block">Comment</button>
                 </form>
             </div>
         </div>
+
     </div>

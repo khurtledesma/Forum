@@ -9,7 +9,7 @@ router.get('/', ensureAuthenticated, (req, res) => {
     .populate('submittedBy')
     .then((result) => {
       result.forEach(i => i.submittedBy = i.submittedBy.name)
-      res.render('catsmain', {
+      res.render('main', {
         posts: result,
         user: req.user,
       })
@@ -25,6 +25,7 @@ router.get('/:subcategory', ensureAuthenticated, (req, res) => {
   .lean()
   .populate('submittedBy')
   .then((result) => {
+    console.log(result)
     result.forEach(i => i.submittedBy = i.submittedBy.name)
     res.render('catssub', {
       posts: result,

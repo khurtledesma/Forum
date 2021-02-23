@@ -1,23 +1,24 @@
 <%- include('./partials/navbar') -%>
     <div>
+        <h2 class="topNav"> Cats > General</h2>
         <div class="mainForum customContainer">
-            <h2>Cats</h2>
+
         <% if (posts.length> 0) {%>
             <% posts.forEach(post=> { %>
                 <div class="forumPost">
                     <h3 class="forumPostSnip">
                         <a href="/post/<%= post._id %>">
-                            <%= post.title %> <%= post.subCategory %>
+                            <%= post.title %>
                         </a>
-                        <p><%= post.submittedBy %>, <%- post.date %> 
-                        </p>
-                        <p>(<%- post.comments.length %>) comments</p> 
                     </h3>
+                    <div><%= post.submittedBy %>, <%- post.date %> 
+                    </div>
+                    <div>(<%- post.comments.length %>) comments</div> 
 
                 </div>
                 <% }) %>
                     <% } else { %>
-                        <p>There are no posts to display...</p>
+                        <p>There are no posts to display...w</p>
                         <% } %>
                     </div>
     </div>

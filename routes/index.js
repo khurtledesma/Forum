@@ -12,6 +12,11 @@ router.get('/register', (req, res) => {
   res.render('register');
 })
 
+router.get('/main', ensureAuthenticated,  (req, res) => {
+  res.render('main', {
+    user: req.user
+  });
+})
 
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
   Post.find()
@@ -21,7 +26,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
     .populate({ path: 'submittedBy', select: 'name' })
     .then((result) => {
       console.log()
-      res.render('dashboard', {
+      res.render('main', {
         posts: result,
         user: req.user,
       })
