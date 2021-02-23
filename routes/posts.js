@@ -69,8 +69,9 @@ router.post('/:id/comments', ensureAuthenticated, (req, res) => {
     comment.save()
 
     Post.findByIdAndUpdate(
+        
         req.params.id,
-        {$push: {"comments": { _id: newID, body: commentBody, submittedBy: req.user}}},
+        {$addToSet: {"comments": { _id: newID, body: commentBody, submittedBy: req.user}}},
         {safe: true, upsert: true, new : true},
         function(err, model) {
             console.log(err);
