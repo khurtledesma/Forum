@@ -1,10 +1,51 @@
 <%- include('./partials/navbar') -%>
+
     <div class="mainForum container">
-        <h2 class="text-center">Categories</h2>
-        <a href="/cats">Cats</a>
-        <a href="/dogs">Dogs</a>
-        <a href="/other">Other</a>
-        
+
+        <div class="mainCategories">
+            <h2 class="text-center">Categories</h2>
+            <div class="row">
+                <div class="col-md-4 category"><a href="/cats"><img src="/img/catIcon.png">
+                        <figcaption class="text-center text-enlarge">Cats </figcaption>
+                    </a>
+                </div>
+                <div class="col-md-4 category"><a href="/dogs"><img src="/img/dogIcon.png">
+                        <figcaption class="text-center text-enlarge">Dogs</figcaption>
+                    </a>
+                </div>
+                </figcaption>
+                <div class="col-md-4 category"><a href="/Other"><img src="img/otherIcon.png">
+                        <figcaption class="text-center text-enlarge">Other</figcaption>
+                    </a>
+                </div>
+                </figcaption>
+            </div>
+        </div>
     </div>
 
-<%- include('./partials/footer') -%>
+
+    <div class="recentPosts">
+        <h2 class="text-center">Recent Posts</h2>
+        <div class="customContainer">
+             <% if (posts.length> 0) {%>
+            <% posts.forEach(post=> { %>
+                <div class="forumPost">
+                    <h3 class="forumPostSnip">
+                        <a href="/post/<%= post._id %>">
+                            <%= post.title %>
+                        </a>
+                        <p><%- post.submittedBy.name %>, <%- post.date %>
+                        </p>
+                        <p>(<%- post.comments.length %>) comments</p> 
+                    </h3>
+
+                </div>
+                <% }) %>
+                    <% } else { %>
+                        <p>There are no posts to display...</p>
+                        <% } %>
+        </div>
+    </div>
+    </div>
+
+    <%- include('./partials/footer') -%>

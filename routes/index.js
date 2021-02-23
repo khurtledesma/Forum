@@ -12,8 +12,13 @@ router.get('/register', (req, res) => {
   res.render('register');
 })
 
+
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
   Post.find()
+    .sort({date: -1})
+    .limit(5)
+    .lean()
+    .populate({ path: 'submittedBy', select: 'name' })
     .then((result) => {
       console.log()
       res.render('dashboard', {

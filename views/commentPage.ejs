@@ -1,13 +1,14 @@
 <%- include('./partials/navbar') -%>
 
     <div class="mainForum container">
-        <h2 class="text-center">All Posts</h2>
         <div class="forumPost">
-            <h3 class="forumPostTitle">
+            <h2 class="forumPostTitle">
                 <%= posts.title %>
-            </h3>
-            <div class="forumPostSub"> Posted by: <%= posts.submittedBy.name %>
+            </h2>
+            <div class="forumPostSub">
+                <%= posts.submittedBy.name %>, <%- posts.date %>
             </div>
+            <hr>
             <div class="forumPostBody">
                 <%= posts.body %>
             </div>
@@ -16,32 +17,32 @@
 
         <div class="comments">
 
-            <% if ( posts.comments.length > 0) {%>
-                <% posts.comments.forEach(post=> { %>
-                    <div class="commentMain">
-
-                        <div class=""> Posted by: <%= post.submittedBy.name %> on <%= post.date %>
+                <% if ( posts.comments.length> 0) {%>
+                    <% posts.comments.forEach(post=> { %>
+                        <div class="commentReply">
+                        <div class="commentReplyTitle">
+                            <%= post.submittedBy.name %> on <%= post.date %>
                         </div>
-                        <div class="">
+                        <div class="commentReplyBody">
                             Body: <%= post.body %>
                         </div>
+                        <hr>
 
                         <% }) %>
                             <% } else { %>
                                 <p>There are no replies to this post.</p>
                                 <% } %>
 
-                    </div>
-
-
+            </div>
         </div>
 
-        <div class="addNewComment">
-            <form class="form-group" method="POST" action="/post/<%= posts._id %>/comments">
-                Leave a comment here!
-                <textarea name="commentBody" class="form-control"></textarea>
-                <button type="submit" class="btn btn-primary btn-block">Comment</button>
-            </form>
-        </div>
 
+
+            <div class="addNewComment">
+                <form class="form-group text-center" method="POST" action="/post/<%= posts._id %>/comments">
+                    <textarea name="commentBody" class="form-control"  placeholder="Leave a comment here!"></textarea>
+                    <button type="submit" class="btn btn-primary btn-block">Comment</button>
+                </form>
+            </div>
+        </div>
     </div>

@@ -4,20 +4,57 @@
     padding: 30px;
 }
 
+.recentPosts {
+    margin-top: 15px;
+}
+.customContainer {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 2px black solid;
+    border-radius: 25px;
+}
 .form {
     border: 2px black solid;
     border-radius: 25px;
 }
-
+.navMain {
+    font-size: 40px;
+}
 .mainForum {
-    border: 2px black solid;
     margin-top: 30px;
 }
 
-.forumPost {
+.category {
     border: 2px black solid;
-    padding: 10px;
-    margin: 15px;
+}
+
+.category img {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.text-enlarge {
+    font-size: 30px;
+}
+
+.forumPost {
+    border: .5px gray solid;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin: 1% 0;
+}
+
+.forumPostSnip p {
+    font-size: 15px;
+}
+.forumPostSub {
+    font-style: italic;
+}
+.forumPostBody {
+    margin-top: 25px;
 }
 
 footer {
@@ -26,4 +63,22 @@ footer {
 
 .comments{
     border: 1px solid black;
+    padding-left: 10px;
 }
+
+.commentReply {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+    .navbar .dropdown-item:hover { background-color: blue;}
+	.navbar .nav-item:hover .nav-link{ color: #fff;}
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}	
+/* ============ desktop view .end// ============ */

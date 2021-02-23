@@ -39,10 +39,14 @@ router.get('/:id', ensureAuthenticated, (req, res) => {
     .populate({
     path: 'comments',
     model: 'Comment',
-        populate: ({
+        populate:({
             path: 'submittedBy',
             model: 'User' 
         })
+    })
+    .populate({
+        path: 'submittedBy',
+        model: 'User'
     })
     .then((result) => {
         console.log(result)
@@ -69,7 +73,6 @@ router.post('/:id/comments', ensureAuthenticated, (req, res) => {
     comment.save()
 
     Post.findByIdAndUpdate(
-        
         req.params.id,
         {$addToSet: {"comments": { _id: newID, body: commentBody, submittedBy: req.user}}},
         {safe: true, upsert: true, new : true},
@@ -80,7 +83,15 @@ router.post('/:id/comments', ensureAuthenticated, (req, res) => {
     .lean()
     .populate({
     path: 'comments',
-    model: 'Comment'
+    model: 'Comment',
+        populate:({
+            path: 'submittedBy',
+            model: 'User' 
+        })
+    })
+    .populate({
+        path: 'submittedBy',
+        model: 'User'
     })
     
     .then((result) => {
