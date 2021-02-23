@@ -18,10 +18,18 @@ const PostSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User',
     },
-    comments: {
+    category: {
         type: String,
-        default: 'Other info goes here',
-    }
+        required: true,
+    },
+    subCategory: {
+        type: String,
+        required: true,
+    },
+    comments: [{
+        type: String,
+        date: Date.now,
+    }]
 })
 
 const Post = mongoose.model('Post', PostSchema);
