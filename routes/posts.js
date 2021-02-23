@@ -4,15 +4,20 @@ const router = express.Router();
 const { ensureAuthenticated } = require("../config/auth.js");
 
 router.get('/new-post', ensureAuthenticated, (req, res) => {
-    res.render('newPost')
+    res.render('newPost', {
+        user: req.user,
+    })
 })
 
 router.post('/new-post', ensureAuthenticated, (req, res) => {
-    const { title, body } = req.body;
+    const { title, body, category, subcategory} = req.body;
+    console.log(req.body)
 
     const post = new Post({
         title: title,
         body: body,
+        category: category,
+        subCategory: subcategory,
         submittedBy: req.user
     });
 

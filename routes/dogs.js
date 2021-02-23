@@ -8,7 +8,7 @@ router.get('/', ensureAuthenticated, (req, res) => {
     .populate({ path: 'submittedBy', select: 'name' })
     .then((result) => {
       console.log()
-      res.render('dashboard', {
+      res.render('dogs', {
         posts: result,
         user: req.user,
       })
