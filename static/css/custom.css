@@ -3,14 +3,47 @@ body {
 }
 
 .login {
-    margin-top: 10%;
+    margin-top: 50px;
     padding: 30px;
+    border: 5px solid white;
+    background-color: white;
+    border-radius: 25px;
+} 
+
+.loginbg img {
+    width: 100%;
+    height: auto;
 }
 
-.loginTitle {
-    color: #66FCF1;
+.subHead{
+    background-color: black;
+    height: 30px;
+    color: white;
+    font-size: 20px;
+    padding-left: 20px; 
+    font-weight: bold;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: -20px;
+    border-radius: 25px;
 }
 
+.subBodyPost {
+    border-bottom: 1px solid gray;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.subBodyTitle {
+    font-weight: bold;
+    font-size:15px;
+}
+
+.subBodyTitle img {
+    height: 65px;
+    width: auto;
+}
 
 .error{
     color: red;
@@ -118,7 +151,8 @@ footer {
     padding-left: 10px;
 }
 
-.userIcon {
+.nav-link {
+    font-size: 24px;
 }
 
 .userIcon img{
@@ -142,8 +176,9 @@ footer {
 .addNewComment {
     margin-top: 20px;
 }
-
-
+li p {
+    background-color: white;
+}
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
 	.navbar .nav-item .dropdown-menu{ display: none; }
