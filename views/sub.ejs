@@ -1,7 +1,8 @@
 <%- include('./partials/navbar') -%>
     <div>
-        <h2 class="topNav"> Cats > General</h2>
-        <div class="mainForum customContainer">
+        <h2 class="topNav"><%= category %> > <%= subcategory %></h2>
+ 
+        <div class="customContainer">
 
         <% if (posts.length> 0) {%>
             <% posts.forEach(post=> { %>
@@ -18,7 +19,7 @@
                 </div>
                 <% }) %>
                     <% } else { %>
-                        <p>There are no posts to display...w</p>
+                        <p>There are no posts to display...</p>
                         <% } %>
                     </div>
     </div>

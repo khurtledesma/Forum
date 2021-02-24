@@ -42,6 +42,10 @@ body {
 .mainForum {
     margin-top: 30px;
 }
+.forumHeader {
+    margin-left: 70px;
+    font-size: 60px;
+}
 
 .category {
     border: 2px black solid;

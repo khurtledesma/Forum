@@ -46,7 +46,4 @@ app.use((req,res,next)=> {
 app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
 app.use('/post',require('./routes/posts'));
-app.use('/dogs',require('./routes/dogs'));
-app.use('/cats',require('./routes/cats'));
-app.use('/other',require('./routes/other'));
-
+app.use('/',require('./routes/animals'));
