@@ -48,3 +48,5 @@ app.use('/',require('./routes/index'));
 app.use('/',require('./routes/users'));
 app.use('/post',require('./routes/posts'));
 app.use('/',require('./routes/animals'));
+
+module.exports = app
