@@ -37,9 +37,6 @@ body {
 
 .subBodyPost {
     border-bottom: 1px solid gray;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .subBodyTitle {
@@ -212,7 +209,7 @@ li p {
 
 
 /* ============ mobile view / ============ */
-@media all and (max-width: 768px) {
+@media screen and (max-width: 375px) {
     .loginbg img {
         display: none;
     }
@@ -221,15 +218,34 @@ li p {
         display: none;
     }  
 
-    .customContainer{
-        background-color: black;
-        margin-left: 70px;
-        margin-right: 70px;
-        margin-bottom: 40px;
-        padding: 20px;
-        border: 2px black solid;
-        border-radius: 25px;
-        background-color: white;
+    .mainImg {
+        width:50%;
+        height: auto;
     }
 
+    .login {
+        margin-top:100px;
+        border: none;
+    }
+    .error{
+        font-size: 12px;
+    }
+    .customContainer {
+        margin-top: 15px;
+        margin-left: 0px;
+        margin-right: 0px;
+        border-radius: 0px;
+        border: none;       
+    }
+    .subHead {
+        border-radius: 0px;
+        color: black;
+        display: none;
+    }
+    .subBodyTitle img {
+        margin-left: 0px;
+    }
+    .subBodyComment, .subBodySubmittedBy, .subBodyTitle a {
+        text-align: center;
+    }
 }

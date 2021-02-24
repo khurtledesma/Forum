@@ -1,43 +1,47 @@
 <%- include('./partials/navbar') -%>
-<div>
-    <h2 class="topNav"><a href="/main/#<%=category%>">
-            <%= category %>
-        </a> > <%= subcategory %>
-    </h2>
+    <div>
+        <h2 class="topNav"><a href="/main/#<%=category%>">
+                <%= category %>
+            </a> > <%= subcategory %>
+        </h2>
 
-    <div class="customContainer">
+        <div class="customContainer">
 
-        <div class="subHead">
-            <div class="row">
-                <div class="col-md-6 subHeadTitle">Title</div>
-                <div class="col-md-3 subHeadSubmittedBy">Submitted By</div>
-                <div class="col-md-3 subHeadComment">Comments</div>
-            </div>
-        </div>
-
-        <div class="subBody">
-        <% if (posts.length> 0) {%>
-            <% posts.forEach(post=> { %>
-                <div class="row subBodyPost">
-                    <div class="col-md-6 subBodyTitle">
-                        <img src="/img/forumIcon.jpg">
-                        <a href="/post/<%= post._id %>">
-                        <%= post.title %></a>
-                    </div>
-                    <div class="col-md-3 subHeadSubmittedBy">
-                    <%= post.submittedBy %>
-                    </div>
-                    <div class="col-md-3 subHeadComment">
-                        (<%- post.comments.length %>) comments
-                    </div>
+            <div class="subHead">
+                <div class="row">
+                    <div class="col-md-6 subHeadTitle">Title</div>
+                    <div class="col-md-3 subHeadSubmittedBy">Submitted By</div>
+                    <div class="col-md-3 subHeadComment">Comments</div>
                 </div>
-                        <% }) %>
-                            <% } else { %>
-                                <p>There are no posts to display...</p>
-                                <% } %>
-
             </div>
-    </div>
-</div>
 
-<%- include('./partials/footer') -%>
+            <div class="subBody">
+                <% if (posts.length> 0) {%>
+                    <% posts.forEach(post=> { %>
+                        <div class="row subBodyPost">
+                            <div class="col-md-6 col-sm-12 subBodyTitle">
+                                <img src="/img/forumIcon.jpg">
+                                <a href="/post/<%= post._id %>">
+                                    <%= post.title %>
+                                </a>
+                            </div>
+                            <div class="col-md-3 col-sm-12 subBodySubmittedBy">
+                            <%= post.submittedBy %>
+                        </div>
+                        <div class="col-md-3 col-sm-12 subBodyComment">
+                            (<%- post.comments.length %>) comments
+                        </div>
+
+                        </div>
+                        
+            </div>
+            <% }) %>
+                <% } else { %>
+                    <p>There are no posts to display...</p>
+                    <% } %>
+
+        </div>
+    </div>
+    </div>
+
+    <%- include('./partials/footer') -%>
