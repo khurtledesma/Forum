@@ -27,7 +27,6 @@ router.get('/:category/:subcategory', ensureAuthenticated, (req, res) => {
   .then((result) => {
     const category =  req.params.category
     const subcategory = req.params.subcategory
-    console.log(result)
     result.forEach(i => i.submittedBy = i.submittedBy.name)
     res.render('sub', {
       category: category,

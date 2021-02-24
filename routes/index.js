@@ -19,7 +19,6 @@ router.get('/main', ensureAuthenticated, (req, res) => {
     .lean()
     .populate({ path: 'submittedBy', select: 'name' })
     .then((result) => {
-      console.log()
       res.render('main', {
         posts: result,
         user: req.user,
