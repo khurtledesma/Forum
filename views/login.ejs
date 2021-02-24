@@ -1,9 +1,9 @@
 <div class="login container">
-  <h1 class="text-center"> Login </h1>
+  <h1 class="text-center loginTitle"> Login </h1>
   <div class="container text-center">
-    <%- include ('./partials/messages') %>
+    <div class="error"><%- include ('./partials/messages') %></div>
   </div>
-  <form action="/users/login" method="POST" class="container">
+  <form action="/login" method="POST" class="container">
 
     <div class="form-group">
       <label for="email" hidden>Email</label>

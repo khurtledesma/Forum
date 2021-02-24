@@ -1,23 +1,40 @@
-
 body {
-    background-color:#737CA1;
+    background-color:#c0cad6;
 }
-
 
 .login {
     margin-top: 10%;
     padding: 30px;
-    background-color: white;
 }
 
+.loginTitle {
+    color: #66FCF1;
+}
+
+
+.error{
+    color: red;
+    margin: 15px 0;
+    font-size: 30px;
+    font-weight:bold;
+}
+
+.mainTitle {
+    font-weight: bold;
+    font-size: 50px;
+}
 .recentPosts {
     margin-top: 15px;
 }
-
+.mainImg {
+    margin-top: auto;
+    margin-bottom: auto;
+}
 .topNav {
     margin-left: 70px;
     margin-right: 70px;
     margin-bottom: 0px;
+    text-transform: capitalize;
 }
 .customContainer {
     margin-left: 70px;
@@ -39,7 +56,8 @@ body {
     height: auto;
     width:100px;
 }
-.mainForum {
+
+.marginTop30px {
     margin-top: 30px;
 }
 .forumHeader {
@@ -47,6 +65,14 @@ body {
     font-size: 60px;
 }
 
+a {
+    color: #0993f3;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #0763e5;
+}
 .category {
     border: 2px black solid;
 }
@@ -64,8 +90,6 @@ body {
 .forumPost {
     border: .5px gray solid;
     border-radius: 5px;
-    padding-left: 10px;
-    margin: 1% 0;
 }
 
 .forumPostSnip p {
@@ -75,17 +99,35 @@ body {
     font-style: italic;
 }
 .forumPostBody {
-    margin-top: 25px;
-    padding-bottom: 20px;
+    padding: 20px;
+}
+.forumPostHead{
+    background-color: black;
+    color: white;
+    padding-left: 20px;
 }
 
+.forumPostMain {
+    margin-top: 20px;
+}
 footer {
     background-color: blue;
 }
 
 .comments{
-    border: 1px solid black;
     padding-left: 10px;
+}
+
+.userIcon {
+}
+
+.userIcon img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 50%;
 }
 
 .commentReply {

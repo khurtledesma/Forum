@@ -12,12 +12,6 @@ router.get('/register', (req, res) => {
   res.render('register');
 })
 
-router.get('/main', ensureAuthenticated,  (req, res) => {
-  res.render('main', {
-    user: req.user
-  });
-})
-
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
   Post.find()
     .sort({date: -1})

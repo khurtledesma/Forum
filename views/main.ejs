@@ -1,15 +1,15 @@
 <%- include('./partials/navbar') -%>
     <div>
         <h1 class="forumHeader">Pet Forums</h1>
-        <div class="customContainer">
-
-            <h2 class="text-center">Cats</h2>
+        <div class="customContainer" id="cats">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-2 mainImg">
                     <a href="/cats"><img src="/img/catIcon.png">
                     </a>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-10">
+                    <h2 class="mainTitle">Cats</h2>
+                    <hr>
                     <h3><a href="/cats/general">General</a></h3><span>For all things cat related.</span>
                     <h3><a href="/cats/health">Health</a></h3><span>For all health issues or concerns.</span>
                     <h3><a href="/cats/training">Training</a></h3><span>Yes, it's possible. </span>
@@ -20,14 +20,15 @@
         </div>
 
         <div>
-            <div class="mainForum customContainer">
-                <h2 class="text-center">Dogs</h2>
+            <div class="mainForum customContainer" id="dogs">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-2 mainImg">
                     <a href="/cats"><img src="/img/dogIcon.png">
                     </a>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-10">
+                    <h2>Dogs</h2>
+                    <hr>
                     <h3><a href="/dogs/general">General</a></h3><span>For all things dog related.</span>
                     <h3><a href="/dogs/health">Health</a></h3><span>For all health issues or concerns.</span>
                     <h3><a href="/dogs/training">Training</a></h3><span>Looking for tips on training your dog?.</span>
@@ -38,19 +39,23 @@
             </div>
 
             <div>
-                <div class="mainForum customContainer">
-                    <h2 class="text-center">Other</h2>
+                <div class="mainForum customContainer" id="other">
                     <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-2 mainImg">
                             <a href="/cats"><img src="/img/otherIcon.png">
                             </a>
                         </div>
-                        <div class="col-md-8">
-                            <h3><a href="/other/birds">Birds</a></h3><span></span>
-                            <h3><a href="/other/reptiles">Reptiles</a></h3>
-                            <h3><a href="/other/fish">Fish</a></h3>
-                            <h3><a href="/other/hamsters">Hamsters</a></h3>
-                            <h3><a href="/other/other">Other</a></h3>
+                        <div class="col-md-10">
+                            <h2>Other</h2>
+                            <hr>
+                            <div>
+                                <h3><a href="/other/birds">Birds</a></h3>
+                                <span>For all things birds.</span>
+                            </div>
+                            <h3><a href="/other/reptiles">Reptiles</a></h3> <span>All reptiles here..</span>
+                            <h3><a href="/other/fish">Fish</a></h3><span>Post for fishes of every kind.</span>
+                            <h3><a href="/other/hamsters">Hamsters</a></h3><span>Hamsters, gerbils, rats, they're all welcome here!.</span>
+                            <h3><a href="/other/other">Other</a></h3><span>Got a pet that hasn't been listed yet? Share here!</span>
                         </div>
                     </div>
                 </div>

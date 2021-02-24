@@ -34,6 +34,7 @@ app.use(session({
    }));
 app.use(passport.initialize());
 app.use(passport.session());
+
    //use flash
 app.use(flash());
 app.use((req,res,next)=> {
@@ -44,6 +45,6 @@ app.use((req,res,next)=> {
    })
 //Routes
 app.use('/',require('./routes/index'));
-app.use('/users',require('./routes/users'));
+app.use('/',require('./routes/users'));
 app.use('/post',require('./routes/posts'));
 app.use('/',require('./routes/animals'));
