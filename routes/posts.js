@@ -13,8 +13,6 @@ router.get('/new-post', ensureAuthenticated, (req, res) => {
 
 router.post('/new-post', ensureAuthenticated, (req, res) => {
     const { title, body, category, subcategory } = req.body;
-    console.log(req.body)
-
     const post = new Post({
         title: title,
         body: body,
@@ -49,7 +47,6 @@ router.get('/:id', ensureAuthenticated, (req, res) => {
         model: 'User'
     })
     .then((result) => {
-        console.log(result)
         res.render('commentPage', {
             posts: result,
             user: req.user
