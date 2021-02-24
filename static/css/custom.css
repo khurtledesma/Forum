@@ -212,11 +212,24 @@ li p {
 
 
 /* ============ mobile view / ============ */
-@media screen and (max-width: 813px) {
+@media all and (max-width: 768px) {
     .loginbg img {
-        display:none;
-    }
-    .navbar img{
         display: none;
     }
+
+    .navbar img{
+        display: none;
+    }  
+
+    .customContainer{
+        background-color: black;
+        margin-left: 70px;
+        margin-right: 70px;
+        margin-bottom: 40px;
+        padding: 20px;
+        border: 2px black solid;
+        border-radius: 25px;
+        background-color: white;
+    }
+
 }
