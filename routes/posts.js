@@ -25,7 +25,7 @@ router.post('/new-post', ensureAuthenticated, (req, res) => {
 
     post.save()
         .then((result) => {
-            res.redirect('/dashboard')
+            res.redirect('/main')
         })
         .catch((err) => {
             console.log(err)

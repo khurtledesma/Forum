@@ -1,9 +1,10 @@
 <%- include('./partials/navbar') -%>
-<div class="login">
+<div class="login container">
     <form action="/post/new-post" method="POST" class="container loginForm" id="newPost">
+        <h2 class="text-center">Create new post</h2>
         <div class="form-group">
             <label for="title">Post Title:</label>
-            <input type="text" id="title" name="title" class="form-control">
+            <input type="text" id="title" name="title" class="form-control" maxlength="75">
         </div>
         <div class="form-group">
         <label for="category">Category</label>
@@ -27,6 +28,6 @@
             <label for="body"> Body:</label>
             <textarea id="body" name="body" required class="form-control"></textarea>
         </div>
-        <button type="submit" class="btn btn-secondary btn-block">Submit</button>
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
     </form>
 </div>

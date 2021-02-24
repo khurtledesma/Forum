@@ -1,19 +1,26 @@
+/* ============ desktop view ============ */
 body {
     background-color:#c0cad6;
 }
 
 .login {
-    margin-top: 50px;
+    height: auto;
+    margin-top: 10px;
     padding: 30px;
-    border: 5px solid white;
-    background-color: white;
+    border: 2px solid white;
     border-radius: 25px;
 } 
 
 .loginbg img {
     width: 100%;
-    height: auto;
+    overflow: hidden;
 }
+
+.mainTitleLink{
+    border-top: .5px dotted gray;
+    padding: 10px 0;
+}
+
 
 .subHead{
     background-color: black;
@@ -179,12 +186,37 @@ footer {
 li p {
     background-color: white;
 }
-/* ============ desktop view ============ */
-@media all and (min-width: 992px) {
-	.navbar .nav-item .dropdown-menu{ display: none; }
-    .navbar .dropdown-item:hover { background-color: blue;}
-	.navbar .nav-item:hover .nav-link{ color: #fff;}
-	.navbar .nav-item:hover .dropdown-menu{ display: block; }
-	.navbar .nav-item .dropdown-menu{ margin-top:0; }
-}	
-/* ============ desktop view .end// ============ */
+
+.navbar .nav-item .dropdown-menu{ 
+    display: none; 
+}
+.navbar .nav-item .nav-link{ 
+    color: black;
+}
+
+.dropdown-item .nav-link:hover { 
+    color: white;
+}
+.dropdown-item .nav-link{ 
+    color: black;
+}
+.navbar .nav-item:hover .nav-link{ 
+    color: #fff;
+}
+.navbar .nav-item:hover .dropdown-menu{ 
+    display: block; 
+}
+.navbar .nav-item .dropdown-menu{ 
+    margin-top:0;
+ }
+
+
+/* ============ mobile view / ============ */
+@media screen and (max-width: 813px) {
+    .loginbg img {
+        display:none;
+    }
+    .navbar img{
+        display: none;
+    }
+}

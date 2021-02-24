@@ -1,7 +1,7 @@
-<div class="login">
+<div class="login container">
   <h1 class="text-center loginTitle">Register</h1>
   <%- include ('./partials/messages') %>
-    <form action="/users/register" method="POST" class="container">
+    <form action="/register" method="POST" class="container">
       <div class="form-group">
         <label for="name" hidden>Name</label>
         <input class="form-control" type="name" name="name" placeholder="Enter Name" value="<%= typeof name != 'undefined' ? name : '' %>" />
@@ -24,7 +24,10 @@
       <button type="submit" class="btn btn-primary btn-block">
         Register
       </button>
-      <p class="text-white">Have An Account? <a href="/users/login">Login</a></p>
+      <p>Have An Account? <a href="/login">Login</a></p>
     </form>
+</div>
 
+<div class="loginbg">
+  <img src="/img/loginBG.png">
 </div>
